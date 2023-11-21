@@ -27,9 +27,9 @@ server.post('/login', async (req, res) => {
 });
 
 // Protected admin route
-app.get('/admin-data', auth, roleCheck('admin'), (req, res) => {
+server.get('/admin-data', auth, roleCheck('admin'), (req, res) => {
     res.send('Sensitive admin data');
 });
 
 const PORT = 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
